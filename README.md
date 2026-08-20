@@ -5,7 +5,7 @@ An experiment first testing the **index finger** wearable prototype. This concep
 Equipped with custom joint flex tracking with SMD potentiometers and tactile feedback with velostat and solder wick. 
 
 ### Background
-An upgrade from my two previous sensor gloves, my blog posts share the continous iteration:
+An upgrade from my two previous sensor gloves, my blog posts share the continuous iteration:
 * [Sensor Glove V1](https://bnzel.github.io/2024-11-13-Crude-Sensor-Glove/)
 * [Sensor Glove V2](https://bnzel.github.io/2025-07-10-Sensor-Glove-V2/)
 
@@ -92,8 +92,6 @@ flowchart TD
 #### Schematic
 ![schematic](./images/python/schematic.jpg)
 
-
-
 #### Finger Cuffs
 The cuffs are separated into **three parts** based on the anatomy of our fingers: 
 * Distal Phalanges : DP **&rarr;** TOP
@@ -107,12 +105,14 @@ Each cuffs has their own potentiometer mounts where an extender arm goes through
 ![freecad_index_finger](./images/freecad/freecad_index_finger.png)
 
 #### Glove
-To cover as much surface area of each region. I decided to use a **3x3 matrix** layout on both **DP** and **PP**. **MP** is **1x1 matrix**. 
+The velostat is sandwiched between the solder wicks to create a flexible conductive electrode. There is a **[helpful tutorial that explains how to do this](https://www.youtube.com/watch?v=seMVgJ41BZw)**.
+
+To cover as much surface area of each region, I decided to use a **3x3 matrix** layout on both **DP** and **PP**. **MP** is **1x1 matrix**. They are taped together on each region first with Kapton tape then secured to the cuffs with clear tape.
 
 ![finger_closeup](./images/freecad/finger_closeup.jpg)
 
 ![glove_front_setup](./images/freecad/glove_front_setup.jpg)
 
-The potentiometers VCC and GND is chained while their analog pins are separately wired to the BlackPill. 
+The potentiometers VCC and GND are chained while their analog pins are separately wired to the BlackPill. 
 
 ![glove_back_setup](./images/freecad/glove_back_setup.jpg)
