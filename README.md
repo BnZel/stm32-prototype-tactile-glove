@@ -43,6 +43,47 @@ https://github.com/user-attachments/assets/2a04278b-734e-488a-b526-99382673ec98
 
 ### In Depth Overview
 
+#### How To Run
+To run both the **STM32** and **GUI**, ensure you have the following:
+* Python environment
+* **requirements.txt**
+
+Change to the *'[./pyqt_gui](./pyqt_gui/)'* directory and run *'[main.py](./pyqt_gui/main.py)'*.
+
+To upload firmware or run the **STM32**:
+
+To Upload
+```
+mpremote connect /dev/YOUR_PORT fs cp r_hand.py :r_hand.py
+mpremote connect /dev/YOUR_PORT fs cp main.py :main.py
+mpremote run main.py
+```
+
+Once the port is connected, to run: 
+``` 
+mpremote 
+```
+
+##### Linux or WSL
+You may use these shell scripts without switching to your python environment:
+
+##### Uploading Firmware
+```bash
+eval "$(YOUR_ENV shell.YOUR_SHELL hook)"
+YOUR_ENV activate YOUR_PYTHON_ENV
+mpremote connect /dev/YOUR_PORT fs cp r_hand.py :r_hand.py
+mpremote connect /dev/YOUR_PORT fs cp main.py :main.py
+mpremote run main.py
+```
+
+##### Accessing REPL
+```bash
+eval "$(YOUR_ENV shell.YOUR_SHELL hook)"
+conda activate YOUR_PYTHON_ENV
+mpremote
+```
+
+
 #### Flowcharts
 
 ##### Python Graphical User Interface
