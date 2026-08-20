@@ -19,8 +19,9 @@ An upgrade from my two previous sensor gloves, my blog posts share the continous
     * Python GUI that connects to serial output and reads incoming data to process and plots them in real time.
 
 ### Demo
+https://github.com/user-attachments/assets/46218729-9e85-47b5-97d2-6f6d8990b069
 
-
+https://github.com/user-attachments/assets/2a04278b-734e-488a-b526-99382673ec98
 
 ### Resources
 > List of **tutorial references** are comments in **[./pyqt_gui/init.py](./pyqt_gui/__init__.py)** and **[./sensor_glove/r_hand.py](./sensor_glove/r_hand.py)**
