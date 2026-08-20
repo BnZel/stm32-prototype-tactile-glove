@@ -48,24 +48,26 @@ To run both the **STM32** and **GUI**, ensure you have the following:
 * Python environment
 * **requirements.txt**
 
+To run the **Python GUI**:
 Change to the *'[./pyqt_gui](./pyqt_gui/)'* directory and run *'[main.py](./pyqt_gui/main.py)'*.
 
-To upload firmware or run the **STM32**:
+To upload and run the **STM32**:
+Change to the *'[./sensor_glove](./sensor_glove/)'* directory
 
-To Upload
+Upload
 ```
 mpremote connect /dev/YOUR_PORT fs cp r_hand.py :r_hand.py
 mpremote connect /dev/YOUR_PORT fs cp main.py :main.py
 mpremote run main.py
 ```
 
-Once the port is connected, to run: 
+Once the port is connected, run: 
 ``` 
 mpremote 
 ```
 
 ##### Linux or WSL
-You may use these shell scripts without switching to your python environment:
+You may copy and paste these to shell scripts without switching to your python environment:
 
 ##### Uploading Firmware
 ```bash
@@ -82,7 +84,6 @@ eval "$(YOUR_ENV shell.YOUR_SHELL hook)"
 conda activate YOUR_PYTHON_ENV
 mpremote
 ```
-
 
 #### Flowcharts
 
