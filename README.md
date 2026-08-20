@@ -43,29 +43,54 @@ https://github.com/user-attachments/assets/2a04278b-734e-488a-b526-99382673ec98
 
 ### In Depth Overview
 
-#### How It Works
+#### Flowcharts
 
 ##### Python Graphical User Interface
 ```mermaid
 flowchart TD
     A([Connect Serial]) --> B{Port Connected?} 
-    B ==>|Yes| C{SerialThread Running?}
-    B ==>|No| D{Retry?}
-    D ==>|Yes| B
-    D ==>|No| E([End])
-    C ==>|Yes| F[Read Serial Output]
-    C ==>|No| G[Create and Start SerialThread]
+    B ==> |Yes| C{SerialThread Running?}
+    B ==> |No| D{Retry?}
+    D ==> |Yes| B
+    D ==> |No| E([End])
+    C ==> |Yes| F[Read Serial Output]
+    C ==> |No| G[Create and Start SerialThread]
     G ==> C
     F ==> H[Process as CSV]
     H ==> I[Display to Textarea and Liveplots]
     I ==> J{Stop Serial?}
-    J ==>|Yes| E
-    J ==>|No| F
+    J ==> |Yes| E
+    J ==> |No| F
 ```
+##### Firmware STM32 Blackpill
 
+```mermaid
+flowchart TD
+    A([Initialize ADC pins and R_HAND configurations]) ==> B[Convert FSR and Potentiometer values]
+    B ==> C[Compute DP, MP, PP to calculate_fsr]
+    C ==> D{Voltage Output >= VCC - 0.001?}
+    D ==> |Yes| E[Set FSR value to maximum resistance clamp]
+    D ==> |No| F[Set FSR value to minimum resistance clamp]
+    E ==> G[Calculate FSR]
+    F ==> G
+    G ==> H[Get Pressure Status]
+    H ==> I{Does Pressure Calibration Values exist?}
+    I ==> |Yes| J[Return value]
+    I ==> |No| K[Return N/A]
+    J ==> L[Calculate Conductance]
+    K ==> L
+    L ==> M[Convert to Newtons]
+    M ==> N[Convert to Grams]
+    N ==> O([Process and Send to GUI])
+
+    
+
+```
 
 #### Schematic
 ![schematic](./images/python/schematic.jpg)
+
+
 
 #### Finger Cuffs
 The cuffs are separated into **three parts** based on the anatomy of our fingers: 

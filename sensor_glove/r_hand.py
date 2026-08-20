@@ -8,7 +8,6 @@
 R_HAND = {
     'INDEX': 
             {
-                'SURFACE_AREA': {'DP':1.5},
                 'PINS': {'DP':['A0','A1','A2','A3','A4']}, 
                 'PRESSURE':{'DP':[("NONE", 2.5), ("LIGHT", 2.3), ("MEDIUM", 1.6), ("HEAVY", 1.2)],
                             'MP':[("NONE", 2.0), ("LIGHT", 2.2), ("MEDIUM", 1.7), ("HEAVY", 1.2)],
