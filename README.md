@@ -75,15 +75,17 @@ flowchart TD
     F ==> G
     G ==> H[Get Pressure Status]
     H ==> I{Does Pressure Calibration Values exist?}
-    I ==> |Yes| J[Return value]
+    I ==> |Yes| J[Return and Assign Value]
     I ==> |No| K[Return N/A]
     J ==> L[Calculate Conductance]
     K ==> L
     L ==> M[Convert to Newtons]
     M ==> N[Convert to Grams]
-    N ==> O([Process and Send to GUI])
-
-    
+    N ==> O[Process and Send to GUI]
+    O ==> P[Print to Serial Output in CSV format]
+    P ==> Q[Sleep 50ms]
+    Q ==> R([Loop])
+    R ==> C
 
 ```
 
